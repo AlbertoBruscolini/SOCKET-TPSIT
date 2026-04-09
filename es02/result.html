@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risultato Registrazione</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>JSON registrazione studente</h1>
+  <div id="content"></div>
+  <button id="backButton">Torna al modulo</button>
+
+  <script>
+    const content = document.getElementById('content');
+    const stored = localStorage.getItem('studentRegistrationResult');
+    const back = document.getElementById('backButton');
+
+    if (!stored) {
+      content.innerHTML = '<p class="empty">Nessun dato trovato. Compila prima il modulo di registrazione.</p>';
+    } else {
+      content.innerHTML = '<pre>' + stored + '</pre>';
+    }
+
+    back.addEventListener('click', () => window.location.href = 'index.html');
+  </script>
+</body>
+</html>

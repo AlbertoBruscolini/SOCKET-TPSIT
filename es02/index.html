@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrazione Studente</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Registrazione Studente</h1>
+
+  <form id="studentForm" novalidate>
+    <label>
+      Nome
+      <input type="text" id="nome" name="nome" placeholder="Mario" />
+    </label>
+
+    <label>
+      Cognome
+      <input type="text" id="cognome" name="cognome" placeholder="Rossi" />
+    </label>
+
+    <label>
+      Data di nascita
+      <input type="date" id="dataNascita" name="dataNascita" />
+    </label>
+
+    <label>
+      Codice fiscale
+      <input type="text" id="codiceFiscale" name="codiceFiscale" maxlength="16" placeholder="RSSMRA85M01H501U" />
+      <span class="note">Inserisci 16 caratteri alfanumerici.</span>
+    </label>
+
+    <label>
+      Classe (scelta multipla)
+      <select id="classe" name="classe" multiple size="6">
+        <option value="1A">1A</option>
+        <option value="1B">1B</option>
+        <option value="2A">2A</option>
+        <option value="2B">2B</option>
+        <option value="3A">3A</option>
+        <option value="3B">3B</option>
+      </select>
+      <span class="note">Seleziona almeno una classe.</span>
+    </label>
+
+    <label>
+      Sezione (scelta multipla)
+      <select id="sezione" name="sezione" multiple size="4">
+        <option value="Scientifico">Scientifico</option>
+        <option value="Classico">Classico</option>
+        <option value="Tecnico">Tecnico</option>
+        <option value="Linguistico">Linguistico</option>
+      </select>
+      <span class="note">Seleziona almeno una sezione.</span>
+    </label>
+
+    <div class="checkbox-row">
+      <label>
+        <input type="checkbox" id="ripetente" name="ripetente" /> Ripetente
+      </label>
+    </div>
+
+    <label>
+      Anni ripetuti
+      <input type="number" id="anniRipetuti" name="anniRipetuti" min="0" placeholder="0" disabled />
+      <span class="note">Compilalo solo se il campo "Ripetente" è spuntato.</span>
+    </label>
+
+    <div>
+      Uscita (scelta multipla)
+      <div class="checkbox-row" id="uscitaGroup">
+        <label><input type="checkbox" value="Lavoro" name="uscita" /> Lavoro</label>
+        <label><input type="checkbox" value="Università" name="uscita" /> Università</label>
+        <label><input type="checkbox" value="Tirocinio" name="uscita" /> Tirocinio</label>
+        <label><input type="checkbox" value="Altro" name="uscita" /> Altro</label>
+      </div>
+      <span class="note">Seleziona almeno un'opzione di uscita.</span>
+    </div>
+
+    <div class="submit-block">
+      <button type="submit">Invia</button>
+      <div id="formErrors" class="error-list" aria-live="polite"></div>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
